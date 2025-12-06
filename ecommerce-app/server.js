@@ -1,10 +1,11 @@
 import express from 'express';
+import colors from 'colors';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import cors from 'cors';
-import colors from 'colors';
-import connectDB from './config/db.js';
 import morgan from "morgan";
+
+import connectDB from './config/db.js';
 
 //configure env
 dotenv.config();
