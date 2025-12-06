@@ -3,12 +3,22 @@ import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import colors from 'colors';
+import connectDB from './config/db.js';
+import morgan from "morgan";
 
 //configure env
 dotenv.config();
 
+//connect db
+connectDB();
+
 //rest object
 const app = express();
+
+//middlewares
+app.use(express.json());
+app.use(morgan('dev'));
+app.use(cors());
 
 //rest api
 app.get("/", (req, res) => {
