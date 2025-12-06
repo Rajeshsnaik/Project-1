@@ -1,15 +1,20 @@
-import React from 'react';
-import Header from './Header';
-import Footer from './Footer';
+import React from "react";
+import Header from "./Header";
+import Footer from "./Footer";
 
-const Layout = ({children})=>{
-    return(
-        <>
-        <Header />
-        <main style={{minHeight: "80vh"}}>{children}</main>
-        <Footer />
-        </>
-    )
-}
+const Layout = ({ children }) => {
+  return (
+    <div className="flex flex-col min-h-screen bg-gray-100">
+      {/* Header */}
+      <Header />
+
+      {/* Main Content */}
+      <main className="flex-1 py-6">{children}</main>
+
+      {/* Footer */}
+      <Footer />
+    </div>
+  );
+};
 
 export default Layout;
